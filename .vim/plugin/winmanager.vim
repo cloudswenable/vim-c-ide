@@ -38,6 +38,11 @@ end
 if !exists("g:defaultExplorer")
 	let g:defaultExplorer = 1
 end
+if g:AutoOpenWinManager 
+	 
+	autocmd VimEnter * nested call s:StartWindowsManager()|1wincmd w  
+	 
+endif
 
 " commands
 " toggling between the windows manager open or closed. this can also be used
@@ -271,7 +276,8 @@ function! <SID>StartWindowsManager()
 		let cen = 1
 		" for now assume that the explorer windows always stay on the left.
 		" TODO: make this optional later
-		wincmd H
+		"wincmd H
+		wincmd L
 		" set up the correct width
 		exe g:winManagerWidth.'wincmd |'
 	end
@@ -1062,6 +1068,7 @@ function! <SID>ToggleWindowsManager()
 		call s:CloseWindowsManager()
 	else
 		call s:StartWindowsManager()
+		exe 'q'
 	end
 endfunction
 
