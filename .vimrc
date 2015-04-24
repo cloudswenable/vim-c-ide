@@ -10,6 +10,7 @@ let g:bufExplorerMaxHeight=30
 let g:miniBufExplorerMoreThanOne = 0
 "let g:winManagerWindowLayout='NERDTree|taglist,BufExplore'
 let g:winManagerWindowLayout = "FileExplorer|TagList"
+let g:SuperTabDefaultCompletionType="context"
 cmap wm :WMToggle<cr>
 filetype plugin indent on
 set completeopt=longest,menu
@@ -23,11 +24,11 @@ if filereadable("cscope.out")
 elseif $CSCOPE_DB  != ""
     cs add $CSCOPE_DB
 endif
-nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+nmap <C-c>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-c>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-c>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-c>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-c>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-c>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-c>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-c>d :cs find d <C-R>=expand("<cword>")<CR><CR>
