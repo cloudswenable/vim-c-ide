@@ -21,11 +21,11 @@ if filereadable("cscope.out")
 elseif $CSCOPE_DB  != ""
     cs add $CSCOPE_DB
 endif
-nmap <C-c>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <C-c>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <C-c>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <C-c>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <C-c>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <C-c>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap <C-c>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nmap <C-c>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+nmap ss :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap sg :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap sc :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap st :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap se :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap sf :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap si :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap sd :cs find d <C-R>=expand("<cword>")<CR><CR>
