@@ -13,9 +13,6 @@ let g:winManagerWindowLayout = "FileExplorer|TagList"
 let g:SuperTabDefaultCompletionType="context"
 cmap wm :WMToggle<cr>
 filetype plugin indent on
-set completeopt=longest,menu
-let g:SuperTabRetainCompletionType=2
-let g:SuperTabDefaultCompletionType="<C-X><C-O>"
 
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapWindowNavVim = 1
