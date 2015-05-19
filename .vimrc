@@ -3,7 +3,7 @@ set cindent
 syntax enable
 syntax on
 colorscheme desert
-let g:AutoOpenWinManager = 1
+"let g:AutoOpenWinManager = 1
 let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
 let g:bufExplorerMaxHeight=30
@@ -29,3 +29,4 @@ nmap se :cs find e <C-R>=expand("<cword>")<CR><CR>
 nmap sf :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap si :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap sd :cs find d <C-R>=expand("<cword>")<CR><CR>
+nmap <F11> :wa<cr>:TlistUpdate<cr>:FirstExplorerWindow<cr><F5><c-w>b
