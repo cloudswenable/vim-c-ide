@@ -1,32 +1,36 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" alternatively, pass a path where Vundle should install plugins
+"let path = '~/some/path/here'
+"call vundle#rc(path)
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/vundle'
+
+
+filetype plugin indent on     " required
+Bundle 'Valloric/YouCompleteMe'
+let g:ycm_global_ycm_extra_conf  = '~/.ycm_global_ycm_extra_conf'
 set nu!
 set cindent
 syntax enable
 syntax on
 colorscheme desert
-"let g:AutoOpenWinManager = 1
-let Tlist_Show_One_File=1
-let Tlist_Exit_OnlyWindow=1
-let g:bufExplorerMaxHeight=30
-let g:miniBufExplorerMoreThanOne = 0
-"let g:winManagerWindowLayout='NERDTree|taglist,BufExplore'
-let g:winManagerWindowLayout = "FileExplorer|TagList"
-let g:SuperTabDefaultCompletionType="context"
+
+Bundle 'WinManager'
 cmap wm :WMToggle<cr>
-filetype plugin indent on
+Bundle 'taglist.vim'
+let g:winManagerWindowLayout = "FileExplorer|TagList"
+let g:ycm_confirm_extra_conf = 0
+let g:syntastic_always_populate_loc_list = 1
+set completeopt=longest,menu
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
+
+Bundle 'minibufexpl.vim'
 
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapWindowNavVim = 1
-if filereadable("cscope.out")
-    cs add cscope.out
-elseif $CSCOPE_DB  != ""
-    cs add $CSCOPE_DB
-endif
-nmap ss :cs find s <C-R>=expand("<cword>")<CR><CR>
-nmap sg :cs find g <C-R>=expand("<cword>")<CR><CR>
-nmap sc :cs find c <C-R>=expand("<cword>")<CR><CR>
-nmap st :cs find t <C-R>=expand("<cword>")<CR><CR>
-nmap se :cs find e <C-R>=expand("<cword>")<CR><CR>
-nmap sf :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap si :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nmap sd :cs find d <C-R>=expand("<cword>")<CR><CR>
-nmap <F11> :wa<cr>:TlistUpdate<cr>:FirstExplorerWindow<cr><F5><c-w>b
