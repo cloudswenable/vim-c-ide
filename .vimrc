@@ -1,5 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+let mapleader=';'
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle/
@@ -34,3 +35,12 @@ Bundle 'minibufexpl.vim'
 
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapWindowNavVim = 1
+
+Bundle 'a.vim'
+" *.cpp 和 *.h 间切换
+nmap <Leader>ch :A<CR>
+" " 子窗口中显示 *.cpp 或 *.h
+nmap <Leader>sch :AS<CR>
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
