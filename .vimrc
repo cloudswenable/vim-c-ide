@@ -15,7 +15,7 @@ Plugin 'gmarik/vundle'
 
 filetype plugin indent on     " required
 Bundle 'Valloric/YouCompleteMe'
-let g:ycm_global_ycm_extra_conf  = '~/.ycm_global_ycm_extra_conf'
+let g:ycm_global_ycm_extra_conf  = '~/.ycm_extra_conf'
 set nu!
 set cindent
 syntax enable
